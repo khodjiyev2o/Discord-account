@@ -41,3 +41,6 @@ pip install -r requirements.txt
 ```
 python run.py
 ```
+
+
+<img src="https://github.com/khodjiyev2o/Discord-account/blob/master/dicord.gif"/>
