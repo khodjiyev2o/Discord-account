@@ -83,10 +83,10 @@ class Creator(webdriver.Chrome):
         except TimeoutException:
             pass
     
-<<<<<<< HEAD
+
     ##getting token 
-=======
->>>>>>> 86e1173ace1dc46ca1a13e97bdc00627a029cfff
+
+
     def getting_token(self):
             try:
                 WebDriverWait(self, 10).until(
