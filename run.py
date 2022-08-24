@@ -15,4 +15,5 @@ with Creator() as bot:
                 username=username,
         )
 
-        bot.token_creation()
+        bot.registration()
+        #bot.login_with_token()

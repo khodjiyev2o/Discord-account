@@ -3,7 +3,7 @@ import os
 from pickle import TRUE
 from tkinter.tix import Tree
 from selenium.webdriver.common.keys import Keys
-from re import S
+from re import L, S
 from sre_constants import SUCCESS 
 from selenium import webdriver
 import os
@@ -33,6 +33,7 @@ class Creator(webdriver.Chrome):
         self.implicitly_wait(15)
         self.termsize = os.get_terminal_size()[0]
         self.left = ' '*int(self.termsize/4)
+        self.token = None
     def __exit__(self, exc_type, exc_val, exc_tb):
         if self.teardown:
             self.quit()
@@ -81,8 +82,8 @@ class Creator(webdriver.Chrome):
             self.ask('Is there a captcha? Press enter once you\'ve completed it.')
         except TimeoutException:
             pass
-
-    def token_creation(self):
+    
+    def registration(self):
             try:
                 WebDriverWait(self, 10).until(
                     lambda self: self.current_url != 'https://discord.com/register')
@@ -90,7 +91,16 @@ class Creator(webdriver.Chrome):
                 token = self.execute_script(
                     'location.reload();var i=document.createElement("iframe");document.body.appendChild(i);return i.contentWindow.localStorage.token').strip('"')
                 use = True
-                print(token)
+                self.token = token 
+                print("Аккаунт успешно был  создан : ")
+                print("Ваш токен : ",token)
+                
             except TimeoutException:
                 pass
-            
+
+
+
+    ## login user with his token  when he already has an account in Discord
+    # def login_with_token(self):
+    #     self.get('https://discord.com/login')
+    #     self.execute_script('window.t = "' + self.token + '";window.localStorage = document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage;window.setInterval(() => window.localStorage.token = `"${window.t}"`); window.location.reload();')
