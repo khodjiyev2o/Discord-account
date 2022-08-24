@@ -51,7 +51,7 @@ class Creator(webdriver.Chrome):
     def land_first_page(self):
         self.get(const.BASE_URL)
 
-
+    ## account  creation    
     def registration(self,email,username):
         month = random.choice(['январь', 'февраль', 'март', 'апрель', 'май',
                                 'июнь', 'июль','август','сентябр', 'октябрь', 'ноябрь', 'декабрь'])
@@ -83,7 +83,8 @@ class Creator(webdriver.Chrome):
         except TimeoutException:
             pass
     
-    def registration(self):
+    ##getting token 
+    def getting_token(self):
             try:
                 WebDriverWait(self, 10).until(
                     lambda self: self.current_url != 'https://discord.com/register')
@@ -94,7 +95,7 @@ class Creator(webdriver.Chrome):
                 self.token = token 
                 print("Аккаунт успешно был  создан : ")
                 print("Ваш токен : ",token)
-                
+
             except TimeoutException:
                 pass
 
