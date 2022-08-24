@@ -42,5 +42,6 @@ pip install -r requirements.txt
 python run.py
 ```
 
+7. Execution of  the script in the gif , below :
 
 <img src="https://github.com/khodjiyev2o/Discord-account/blob/master/dicord.gif"/>
