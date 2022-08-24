@@ -11,9 +11,18 @@ email = random_char(7)+"@gmail.com"
 with Creator() as bot:
         bot.land_first_page()
         bot.registration(
+<<<<<<< HEAD
                 email=input("Enter your email:"),
                 username=input("Enter your username:"),
         )
 
         bot.getting_token()
         #bot.login_with_token()        
+=======
+                email=input("Enter your email :"),
+                username=input("Enter your username :"),
+        )
+
+        bot.getting_token()
+        #bot.login_with_token()
+>>>>>>> 86e1173ace1dc46ca1a13e97bdc00627a029cfff
