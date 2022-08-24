@@ -83,7 +83,7 @@ class Creator(webdriver.Chrome):
         except TimeoutException:
             pass
     
-    def registration(self):
+    def getting_token(self):
             try:
                 WebDriverWait(self, 10).until(
                     lambda self: self.current_url != 'https://discord.com/register')
